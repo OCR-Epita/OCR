@@ -262,3 +262,10 @@ BMPPic_ end (BMPPic_ pic)
 
     return pic;
 }
+
+void free_life (histogram histo)
+{
+    free(histo.scope.greyscales);
+    free(histo.nbr);
+}
+
