@@ -3,16 +3,26 @@
 #ifndef TRAITEMENT_H
 #define  TRAITEMENT_H
 
-struct Zone{
-    unsigned char ** data;
-    size_t height;
-    size_t width;
+typedef struct{
+    size_t x;
+    size_t y;
+} Point;
+
+typedef struct {
     void* next;
-};
+    Point a;
+    Point b;
+    Point c;
+    Point d;
+} Zone;
+
+
 
 BMPPic_ DetectOutlines(BMPPic_ pic);
 
 BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b);
+
+void PrintZone(Zone zone);
 
 BMPPic_ DetectZones(BMPPic_ pic);
 

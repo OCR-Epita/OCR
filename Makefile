@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS= -g -Wall -Wextra
 LDFLAGS= -lm
 EXEC=ocr
-SRC= Files/Utility.c Files/Traitement.c Files/Binary.c Files/Segmentation.c main.c
+SRC= Files/Utility.c Files/Traitement.c Files/Binary.c main.c
 OBJ= $(SRC:.c=.o)
 
 all: $(EXEC)

@@ -88,11 +88,52 @@ BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b){
     return pic;
 }
 
+void PrintZone(Zone zone){
+    printf("a = (%d,%d); b = (%d,%d); c = (%d,%d); d = (%d,%d)\n",zone.a.x,zone.a.y,zone.b.x,zone.b.y,zone.c.x,zone.c.y,zone.d.x,zone.d.y);
+}
 
 BMPPic_ DetectZones(BMPPic_ pic){
-    struct Zone *first;
+    unsigned char AlreadyTreat[pic.height][pic.width];
+    memset(AlreadyTreat,0,pic.height*pic.width);
+    for (size_t i = 0; i < pic.height; i++) {
+        for (size_t j = 0; j < pic.width; j++) {
+            if (pic.GREYMATRIX[i][j] == 0 && AlreadyTreat[i][j] == 0) {
+                Zone zone;
+                zone.a.x = i;
+                zone.a.y = j;
+                size_t tp_i = i;
+                size_t tp_j = j;
 
-    first = malloc(sizeof(unsigned char) * 4);
+                while (tp_j < pic.width - 1 && pic.GREYMATRIX[i][tp_j] == 0) {
+                    ++tp_j;
+                }
+                zone.b.x = i;
+                zone.b.y = tp_j;
 
+                while (tp_i < pic.height - 1 && pic.GREYMATRIX[tp_i][j] == 0) {
+                    ++tp_i;
+                }
+
+                zone.c.x = tp_i;
+                zone.c.y = j;
+
+                zone.d.x = tp_i;
+                zone.d.y = tp_j;
+
+
+                for (size_t k = zone.a.x; k < zone.c.x; k++) {
+                    for (size_t l = zone.a.y; l < zone.b.y; l++) {
+                        pic.GREYMATRIX[k][l] = 124;
+                        AlreadyTreat[k][l] = 1;
+                    }
+                }
+
+                PrintZone(zone);
+
+                j=tp_j;
+                i = tp_i;
+            }
+        }
+    }
     return pic;
 }
