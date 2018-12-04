@@ -265,7 +265,7 @@ BMPPic_ end (BMPPic_ pic)
         }
         i+=1;
     }
-    free_life(histo);
+    //free_life(histo);
     return pic;
 }
 
