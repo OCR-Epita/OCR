@@ -1,5 +1,6 @@
 #include <string.h>
 #include <math.h>
+#include <stdlib.h>
 
 #include "Binary.h"
 #include "Utility.h"
@@ -227,6 +228,13 @@ BMPPic_ Changing (BMPPic_ pic,int threshold,size_t x,size_t y)
 
 }
 
+void free_life (histogram histo)
+{
+    free(histo.scope.greyscales);
+    free(histo.nbr);
+}
+
+
 //aplly the binarisation
 BMPPic_ end (BMPPic_ pic)
 {
@@ -259,13 +267,6 @@ BMPPic_ end (BMPPic_ pic)
         }
         i+=1;
     }
-    free_life(histo);
+    //free_life(histo);
     return pic;
 }
-
-void free_life (histogram histo)
-{
-    free(histo.scope.greyscales);
-    free(histo.nbr);
-}
-
