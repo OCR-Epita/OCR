@@ -3,7 +3,7 @@
 //
 
 #include "Segmentation.h"
-#include "../Thomas/TraitementImage.h"
+#include "Traitement.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -131,6 +131,11 @@ BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic,int debut,int fin)
     return MyPic;
 }
 
+void freelife (BMPPic_ MyPic)
+{
+    free(MyPic.colons_scope);
+}
+
 BMPPic_ moulinex (BMPPic_ MyPic)
 {
 
@@ -144,6 +149,7 @@ BMPPic_ moulinex (BMPPic_ MyPic)
         MyPic = Get_horizontal_Paragraph(MyPic,list[i]+1,MyPic.width);
         i+=1;
     }
+    freelife(MyPic);
     return MyPic;
 }
 
@@ -178,3 +184,5 @@ BMPPic_ lignes_traitement (BMPPic_ MyPic, size_t x_upper,size_t y_upper, size_t 
     }
     return MyPic;
 }
+
+

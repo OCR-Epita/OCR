@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #ifndef UTILITY_H
 #define  UTILITY_H
 
@@ -36,7 +38,7 @@ typedef struct {
     unsigned char *PIXELDATA;
     unsigned char **GREYMATRIX;
     unsigned char **TEXTZONE;
-    size_t* colons_scope;
+    int* colons_scope;
     int last;
 } BMPPic_;
 

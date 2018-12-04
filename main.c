@@ -3,6 +3,7 @@
 
 #include "Files/Utility.h"
 #include "Files/Traitement.h"
+#include "Files/Segmentation.h"
 #include "Files/Binary.h"
 
 void free_(BMPPic_ pic){
@@ -17,13 +18,28 @@ void free_(BMPPic_ pic){
 int main()
 {
     BMPPic_ pic;
-    pic = InitPic(pic, "Images/wiki.bmp");
+    pic = InitPic(pic,"Images/wiki.bmp");
 
-    //pic = DetectOutlines(pic);
+    /*//pic = DetectOutlines(pic);
 
-    pic = end(pic);
+
 
     restructPic(pic,"res.bmp");
+
+    free_(pic);*/
+
+
+    pic = end(pic);
+    pic = ApplyRLSA(pic,180,500);
+
+    restructPic(pic,"result/1.bmp");
+
+
+    pic = Get_Space_Paragraph(pic);
+
+    pic = moulinex(pic);
+
+    restructPic(pic,"result/result.bmp");
 
     free_(pic);
 	return 0;
