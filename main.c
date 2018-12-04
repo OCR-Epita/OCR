@@ -17,14 +17,21 @@ void free_(BMPPic_ pic){
 int main()
 {
     BMPPic_ pic;
-    pic = InitPic(pic, "Images/wiki.bmp");
 
-    //pic = DetectOutlines(pic);
+    pic = InitPic(pic, "Images/wiki.bmp");
 
     pic = end(pic);
 
+    //pic = DetectOutlines(pic);
+
+    pic = ApplyRLSA(pic,300,400);
+
     restructPic(pic,"res.bmp");
 
+
+    DetectZones(pic);
+
     free_(pic);
+
 	return 0;
 }

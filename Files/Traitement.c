@@ -87,3 +87,12 @@ BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b){
     }
     return pic;
 }
+
+
+BMPPic_ DetectZones(BMPPic_ pic){
+    struct Zone *first;
+
+    first = malloc(sizeof(unsigned char) * 4);
+
+    return pic;
+}
