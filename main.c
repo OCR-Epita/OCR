@@ -26,10 +26,12 @@ int main()
 
     pic = ApplyRLSA(pic,300,400);
 
+    
+
     restructPic(pic,"res.bmp");
 
 
-    DetectZones(pic);
+    //DetectZones(pic);
 
     free_(pic);
 
