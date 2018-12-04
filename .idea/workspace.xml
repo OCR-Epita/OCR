@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14288217-4950-4779-8bbf-49b3d924a007" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/Binary.c" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Binary.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/Binary.o" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Binary.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/Segmentation.c" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Segmentation.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/Segmentation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Segmentation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ocr" beforeDir="false" afterPath="$PROJECT_DIR$/ocr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/1.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/result/1.bmp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,30 +32,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Makefile" value="1" />
-          <entry key="bmp" value="1" />
-          <entry key="c" value="11" />
-          <entry key="h" value="4" />
+          <entry key="Makefile" value="2" />
+          <entry key="bmp" value="4" />
+          <entry key="c" value="15" />
+          <entry key="h" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="1" />
-          <entry key="ObjectiveC" value="15" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Image" value="4" />
+          <entry key="ObjectiveC" value="20" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="28" />
-          <entry key="c" value="240" />
-          <entry key="h" value="29" />
+          <entry key="c" value="464" />
+          <entry key="h" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="2" />
-          <entry key="ObjectiveC" value="267" />
+          <entry key="ObjectiveC" value="507" />
           <entry key="PLAIN_TEXT" value="28" />
         </counts>
       </usages-collector>
@@ -63,36 +63,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="53">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Downloads/gtk.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="181" column="6" selection-start-line="181" selection-start-column="6" selection-end-line="181" selection-end-column="6" />
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files/Traitement.c">
+        <entry file="file://$PROJECT_DIR$/Files/Binary.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-892" />
+            <state relative-caret-position="418">
+              <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files/Utility.h">
+        <entry file="file://$PROJECT_DIR$/result/result.bmp">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Files/Segmentation.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+            <state relative-caret-position="200">
+              <caret line="104" selection-start-line="104" selection-end-line="104" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -100,33 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Files/Segmentation.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files/Segmentation.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files/Utility.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1147" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files/Binary.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="267" column="6" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="6" />
+            <state relative-caret-position="150">
+              <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -139,13 +112,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Files/Segmentation.h" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/Files/Utility.h" />
-        <option value="$PROJECT_DIR$/Files/Segmentation.c" />
-        <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/Files/Binary.c" />
         <option value="$USER_HOME$/Downloads/gtk.c" />
+        <option value="$PROJECT_DIR$/Files/Binary.c" />
+        <option value="$PROJECT_DIR$/Files/Segmentation.c" />
+        <option value="$PROJECT_DIR$/Files/Segmentation.h" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
@@ -176,6 +149,11 @@
               <item name="ocr" type="b2602c69:ProjectViewProjectNode" />
               <item name="ocr" type="462c0819:PsiDirectoryNode" />
               <item name="Files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ocr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ocr" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -217,7 +195,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1866000" />
+    <option name="totallyTimeSpent" value="5381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -281,11 +259,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Files/Segmentation.h">
+    <entry file="file://$PROJECT_DIR$/result/1.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Files/Traitement.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
+        <state relative-caret-position="-892" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Files/Utility.h">
@@ -295,44 +274,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result/1.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Files/Traitement.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-892" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Files/Segmentation.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Files/Utility.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1147" />
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/gtk.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2123">
+          <caret line="40" column="59" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Files/Binary.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="267" column="6" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="6" />
+        <state relative-caret-position="418">
+          <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/result.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Files/Segmentation.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="104" selection-start-line="104" selection-end-line="104" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Files/Segmentation.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/gtk.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="181" column="6" selection-start-line="181" selection-start-column="6" selection-end-line="181" selection-end-column="6" />
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>

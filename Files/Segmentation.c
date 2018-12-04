@@ -19,11 +19,10 @@ void Color_colomn (BMPPic_ MyPic,size_t line)
         }
         i+=1;
     }
-
 }
 
 
-BMPPic_ Get_Space_Paragraph (BMPPic_ MyPic)
+BMPPic_ Get_Space_Paragraph (BMPPic_ MyPic,BMPPic_ MySecondPic)
 {
     size_t i = 0;
     size_t j;
@@ -50,7 +49,7 @@ BMPPic_ Get_Space_Paragraph (BMPPic_ MyPic)
         if(res/MyPic.height < 0.1)
         {
             collons[k] = i;
-            Color_colomn(MyPic,i);
+            Color_colomn(MySecondPic,i);
             k+=1;
         }
         i+=1;
@@ -103,7 +102,7 @@ BMPPic_ Get_group (BMPPic_ MyPic,int* list)
 
 
 
-BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic,int debut,int fin)
+BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic, BMPPic_ MySecondPic,int debut,int fin)
 {
     size_t i = 0;
     int j;
@@ -123,7 +122,7 @@ BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic,int debut,int fin)
         }
         if(res/MyPic.width < 0.06)
         {
-            Color_line(MyPic,i,debut,fin);
+            Color_line(MySecondPic,i,debut,fin);
             k+=1;
         }
         i+=1;
@@ -136,17 +135,17 @@ void freelife (BMPPic_ MyPic)
     free(MyPic.colons_scope);
 }
 
-BMPPic_ moulinex (BMPPic_ MyPic)
+BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
 {
 
-    Color_colomn(MyPic,0);
+    Color_colomn(MySecondPic,0);
     MyPic = Get_group(MyPic,MyPic.colons_scope);
     int* list = MyPic.colons_scope;
      int i = 0;
-    MyPic = Get_horizontal_Paragraph(MyPic,0,list[i]);
+    MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,0,list[i]);
     while( list[i] != 0)
     {
-        MyPic = Get_horizontal_Paragraph(MyPic,list[i]+1,MyPic.width);
+        MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,list[i]+1,MyPic.width);
         i+=1;
     }
     freelife(MyPic);

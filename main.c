@@ -17,8 +17,8 @@ void free_(BMPPic_ pic){
 
 int main()
 {
-    BMPPic_ pic;
-    pic = InitPic(pic,"Images/wiki.bmp");
+    BMPPic_ pic = InitPic(pic,"Images/wiki.bmp");
+    BMPPic_ second = InitPic(second,"Images/wiki.bmp");
 
     /*//pic = DetectOutlines(pic);
 
@@ -35,10 +35,11 @@ int main()
     restructPic(pic,"result/1.bmp");
 
 
-    pic = Get_Space_Paragraph(pic);
+    pic = Get_Space_Paragraph(pic,second);
 
-    pic = moulinex(pic);
+    pic = moulinex(pic,second);
 
+    restructPic(second,"result/second.bmp");
     restructPic(pic,"result/result.bmp");
 
     free_(pic);
