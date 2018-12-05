@@ -1,5 +1,10 @@
+
+
 #ifndef UTILITY_H
 #define  UTILITY_H
+
+#include <stdio.h>
+
 
 typedef struct {
     short bftype;
@@ -29,13 +34,21 @@ typedef struct {
 } Pixel_;
 
 typedef struct {
+    size_t x;
+    size_t y;
+    size_t height;
+    size_t width;
+} Zone;
+
+typedef struct {
     BITMAPHEADER header;
     size_t height;
     size_t width;
     unsigned char *HEADERDATA;
     unsigned char *PIXELDATA;
     unsigned char **GREYMATRIX;
-    unsigned char **TEXTZONE;
+    size_t nbZones;
+    Zone *TEXTZONE;
     size_t* colons_scope;
     int last;
 } BMPPic_;

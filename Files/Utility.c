@@ -101,6 +101,6 @@ BMPPic_ InitPic(BMPPic_ pic,char *path){
     pic.PIXELDATA = calloc((size_t) pic.header.bfSize - pic.header.bfOffBits, sizeof(char));
     fread(pic.PIXELDATA,(size_t) pic.header.bfSize - pic.header.bfOffBits,1,file);
     pic = InitGreyMatr(pic);
-
+    pic.nbZones = 0;
     return pic;
 }
