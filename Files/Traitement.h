@@ -7,4 +7,8 @@ BMPPic_ DetectOutlines(BMPPic_ pic);
 
 BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b);
 
+void PrintZone(Zone zone);
+
+BMPPic_ DetectZones(BMPPic_ pic);
+
 #endif

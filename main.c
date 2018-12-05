@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 #include "Files/Utility.h"
 #include "Files/Traitement.h"
@@ -15,18 +17,12 @@ void free_(BMPPic_ pic){
     free(pic.GREYMATRIX);
 }
 
+
+
 int main()
 {
     BMPPic_ pic = InitPic(pic,"Images/wiki.bmp");
     BMPPic_ second = InitPic(second,"Images/wiki.bmp");
-
-    /*//pic = DetectOutlines(pic);
-
-
-
-    restructPic(pic,"res.bmp");
-
-    free_(pic);*/
 
 
     pic = end(pic);
@@ -37,9 +33,14 @@ int main()
 
     pic = moulinex(pic,second);
 
+    pic = DetectZones(pic);
+
     restructPic(pic,"result/first.bmp");
+
     restructPic(second,"result/second.bmp");
 
     free_(pic);
+    free_(second);
+
 	return 0;
 }

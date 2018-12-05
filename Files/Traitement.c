@@ -87,3 +87,48 @@ BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b){
     }
     return pic;
 }
+
+BMPPic_ DetectZones(BMPPic_ pic){
+    pic.TEXTZONE = malloc(1);
+    unsigned char alrdTreat[pic.height][pic.width];
+    memset(alrdTreat,0,pic.height * pic.width);
+    for (size_t i = 0; i < pic.height; i++) {
+        for (size_t j = 0; j < pic.width; j++) {
+            if (alrdTreat[i][j] == 0 && pic.GREYMATRIX[i][j] == 0) {
+                Zone cur;
+                cur.x = i;
+                cur.y = j;
+                size_t tp_i = i;
+                size_t tp_j = j;
+                while (tp_i < pic.height && pic.GREYMATRIX[tp_i][j] == 0) {
+                    tp_i += 1;
+                }
+                cur.height = tp_i - i;
+                while (tp_j < pic.width && pic.GREYMATRIX[i][tp_j] == 0) {
+                    tp_j += 1;
+                }
+                cur.width = tp_j - j;
+                pic.nbZones += 1;
+                pic.TEXTZONE = realloc(pic.TEXTZONE,pic.nbZones * sizeof(Zone));
+                pic.TEXTZONE[pic.nbZones-1] = cur;
+                for (size_t k = i; k < tp_i; k++) {
+                     for (size_t l = j; l < tp_j; l++) {
+                         alrdTreat[k][l] = 1;
+                     }
+                }
+            }
+        }
+    }
+
+    printf("nb de zones : %d \n",pic.nbZones);
+
+    for (size_t m = 0; m < pic.nbZones; ++m) {
+        for (size_t i = pic.TEXTZONE[m].x; i < pic.TEXTZONE[m].x + pic.TEXTZONE[m].height; ++i) {
+            for (size_t j = pic.TEXTZONE[m].y; j < pic.TEXTZONE[m].y + pic.TEXTZONE[m].width; ++j) {
+                pic.GREYMATRIX[i][j] = 80;
+            }
+        }
+    }
+    
+    return pic;
+}

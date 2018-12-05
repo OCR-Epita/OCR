@@ -67,6 +67,7 @@ unsigned char getGray(BMPPic_ myPic,size_t x, size_t y){
 
 //Same thing for SetPixel but for greyscale image
 BMPPic_ setGray(BMPPic_ myPic,size_t x, size_t y,unsigned char val){
+    //printf("%d \n", myPic.height);
     myPic.GREYMATRIX[x][y] = val;
     return myPic;
 }
@@ -101,6 +102,6 @@ BMPPic_ InitPic(BMPPic_ pic,char *path){
     pic.PIXELDATA = calloc((size_t) pic.header.bfSize - pic.header.bfOffBits, sizeof(char));
     fread(pic.PIXELDATA,(size_t) pic.header.bfSize - pic.header.bfOffBits,1,file);
     pic = InitGreyMatr(pic);
-
+    pic.nbZones = 0;
     return pic;
 }
