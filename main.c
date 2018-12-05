@@ -21,8 +21,8 @@ void free_(BMPPic_ pic){
 
 int main()
 {
-    BMPPic_ pic = InitPic(pic,"Images/wiki.bmp");
-    BMPPic_ second = InitPic(second,"Images/wiki.bmp");
+    BMPPic_ pic = InitPic(pic,"../Images/wiki2.bmp");
+    BMPPic_ second = InitPic(second,"../Images/wiki2.bmp");
 
 
     pic = end(pic);
@@ -37,8 +37,8 @@ int main()
 
     second = cathy(pic,second);
 
-    restructPic(pic,"result/first.bmp");
-    restructPic(second,"result/second.bmp");
+    restructPic(pic,"../result/first.bmp");
+    restructPic(second,"../result/second.bmp");
 
 
     free_(pic);
