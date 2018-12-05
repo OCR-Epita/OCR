@@ -49,7 +49,7 @@ typedef struct {
     unsigned char **GREYMATRIX;
     size_t nbZones;
     Zone *TEXTZONE;
-    size_t* colons_scope;
+    int* colons_scope;
     int last;
 } BMPPic_;
 

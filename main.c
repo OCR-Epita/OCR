@@ -29,17 +29,17 @@ int main()
     second = end(second);
 
     pic = ApplyRLSA(pic,180,500);
-
-
     pic = Get_Space_Paragraph(pic,second);
 
     pic = moulinex(pic,second);
 
     pic = DetectZones(pic);
 
-    restructPic(pic,"result/first.bmp");
+    second = cathy(pic,second);
 
+    restructPic(pic,"result/first.bmp");
     restructPic(second,"result/second.bmp");
+
 
     free_(pic);
     free_(second);

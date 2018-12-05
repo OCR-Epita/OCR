@@ -213,7 +213,51 @@ BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
     return MyPic;
 }
 
+BMPPic_ separation (BMPPic_ MyPic,size_t x,size_t y,size_t size)
+{
+    size_t i = y;
 
+    while(i <= x + size)
+    {
+        if(getGray(MyPic,i,y) == 255) {
+            setGray(MyPic, i, y, 0);
+        }
+        y+=1;
+        i+=1;
+    }
+    return MyPic;
+}
+
+BMPPic_ cathy (BMPPic_ MyPic,BMPPic_ MySecondPic)
+{
+    size_t nbr_ligne = MyPic.nbZones;
+    Zone *lignes = MyPic.TEXTZONE;
+    float res = 0;
+    size_t k = 0;
+    size_t i =0;
+
+    while(i < nbr_ligne)
+    {
+        for (size_t j = lignes[i].y; j < lignes[i].width ; ++j) {
+            res = 0;
+            k = lignes[i].x;
+            while (k < lignes[i].height){
+                if(getGray(MySecondPic,j,k) == 255)
+                {
+                    res +=1;
+                }
+                k+=1;
+            }
+            if ((res/lignes[i].height) < 0.06)
+            {
+                //separation(MySecondPic,lignes[i].x,lignes[i].y,lignes[i].height);
+                Color_colomn(MySecondPic,k);
+            }
+        }
+        i+=1;
+    }
+    return MySecondPic;
+}
 
 
 
