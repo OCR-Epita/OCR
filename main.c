@@ -32,15 +32,13 @@ int main()
     pic = end(pic);
     pic = ApplyRLSA(pic,180,500);
 
-    restructPic(pic,"result/1.bmp");
-
 
     pic = Get_Space_Paragraph(pic,second);
 
     pic = moulinex(pic,second);
 
+    restructPic(pic,"result/1.bmp");
     restructPic(second,"result/second.bmp");
-    restructPic(pic,"result/result.bmp");
 
     free_(pic);
 	return 0;

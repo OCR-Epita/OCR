@@ -5,6 +5,7 @@
 #include "Segmentation.h"
 #include "Traitement.h"
 #include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 
@@ -135,25 +136,7 @@ void freelife (BMPPic_ MyPic)
     free(MyPic.colons_scope);
 }
 
-BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
-{
-
-    Color_colomn(MySecondPic,0);
-    MyPic = Get_group(MyPic,MyPic.colons_scope);
-    int* list = MyPic.colons_scope;
-     int i = 0;
-    MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,0,list[i]);
-    while( list[i] != 0)
-    {
-        MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,list[i]+1,MyPic.width);
-        i+=1;
-    }
-    freelife(MyPic);
-    return MyPic;
-}
-
-
-BMPPic_ lignes_traitement (BMPPic_ MyPic, size_t x_upper,size_t y_upper, size_t x_bottom, size_t y_bottom)
+BMPPic_ lignes_traitement (BMPPic_ MyPic, BMPPic_ MySecondPic, size_t x_upper,size_t y_upper, size_t x_bottom, size_t y_bottom)
 {
 
     size_t i = x_upper;
@@ -175,7 +158,7 @@ BMPPic_ lignes_traitement (BMPPic_ MyPic, size_t x_upper,size_t y_upper, size_t 
         {
             for (size_t k = 0; k < y_bottom; ++k) {
                 for (size_t l = 0; l < x_bottom; ++l) {
-                    setGray(MyPic, l,k, 80);
+                    setGray(MySecondPic, l,k, 80);
                 }
             }
         }
@@ -183,5 +166,54 @@ BMPPic_ lignes_traitement (BMPPic_ MyPic, size_t x_upper,size_t y_upper, size_t 
     }
     return MyPic;
 }
+
+BMPPic_ coloriage (BMPPic_ Mypic, BMPPic_ MySecondPic)
+{
+    size_t i =0;
+    size_t j = 0;
+
+
+    while (i < Mypic.height)
+    {
+        j =0;
+        while (j < Mypic.width)
+        {
+            if(getGray(MySecondPic,i,j) != 80)
+            {
+                Mypic.GREYMATRIX[i][j] = 0;
+            }
+            else
+            {
+                Mypic.GREYMATRIX[i][j] = 255;
+            }
+            j+=1;
+        }
+        i+=1;
+    }
+    return Mypic;
+}
+
+BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
+{
+
+    Color_colomn(MySecondPic,0);
+    MyPic = Get_group(MyPic,MyPic.colons_scope);
+    int* list = MyPic.colons_scope;
+     int i = 0;
+    MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,0,list[i]);
+    while( list[i] != 0)
+    {
+        MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,list[i]+1,MyPic.width);
+        i+=1;
+    }
+
+    MyPic = coloriage(MyPic,MySecondPic);
+
+    freelife(MyPic);
+    return MyPic;
+}
+
+
+
 
 
