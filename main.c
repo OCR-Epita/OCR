@@ -26,6 +26,8 @@ int main()
 
 
     pic = end(pic);
+    second = end(second);
+
     pic = ApplyRLSA(pic,180,500);
 
 
