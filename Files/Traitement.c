@@ -109,6 +109,7 @@ BMPPic_ DetectZones(BMPPic_ pic){
                 }
                 cur.width = tp_j - j;
                 pic.nbZones += 1;
+                printf("%d \n",pic.nbZones * sizeof(Zone));
                 pic.TEXTZONE = realloc(pic.TEXTZONE,pic.nbZones * sizeof(Zone));
                 pic.TEXTZONE[pic.nbZones-1] = cur;
                 for (size_t k = i; k < tp_i; k++) {

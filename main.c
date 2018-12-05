@@ -17,18 +17,18 @@ void free_(BMPPic_ pic){
     free(pic.GREYMATRIX);
 }
 
-
-
 int main()
 {
-    BMPPic_ pic = InitPic(pic,"Images/wiki.bmp");
-    BMPPic_ second = InitPic(second,"Images/wiki.bmp");
+    BMPPic_ pic = InitPic(pic,"Images/wiki_2.bmp");
 
+    BMPPic_ second = InitPic(second,"Images/wiki_2.bmp");
 
     pic = end(pic);
+
     second = end(second);
 
-    pic = ApplyRLSA(pic,180,500);
+    pic = ApplyRLSA(pic,200,500);
+
 
 
     pic = Get_Space_Paragraph(pic,second);
@@ -37,11 +37,12 @@ int main()
 
     pic = DetectZones(pic);
 
-    restructPic(pic,"result/first.bmp");
+    restructPic(pic,"../result/first.bmp");
 
-    restructPic(second,"result/second.bmp");
+    restructPic(second,"../result/second.bmp");
 
     free_(pic);
+
     free_(second);
 
 	return 0;
