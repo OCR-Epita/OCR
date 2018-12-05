@@ -19,8 +19,13 @@ main.o: $(SRC)
 
 clean:
 	rm -fr Files/*.o
+	rm -fr result/*
 	rm -rf *.o
 	rm -rf *.o
 
 mrproper: clean
 	rm -rf $(EXEC)
+
+commit:
+	git add --all
+	git commit -m "ok"

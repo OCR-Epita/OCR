@@ -27,8 +27,6 @@ int main()
 
     second = end(second);
 
-    pic = ApplyRLSA(pic,200,500);
-
     pic = ApplyRLSA(pic,180,500);
 
     pic = Get_Space_Paragraph(pic,second);
@@ -37,16 +35,11 @@ int main()
 
     pic = DetectZones(pic);
 
-    restructPic(pic,"../result/first.bmp");
-
-    restructPic(second,"../result/second.bmp");
-    
     second = cathy(pic,second);
 
     restructPic(pic,"result/first.bmp");
+
     restructPic(second,"result/second.bmp");
-
-
 
     free_(pic);
 
