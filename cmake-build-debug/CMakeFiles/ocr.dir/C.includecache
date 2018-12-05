@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/ocr/ocr/Files/Segmentation.c
+Segmentation.h
+/root/ocr/ocr/Files/Segmentation.h
+Traitement.h
+/root/ocr/ocr/Files/Traitement.h
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+/root/ocr/ocr/Files/Segmentation.h
+Traitement.h
+/root/ocr/ocr/Files/Traitement.h
+
+/root/ocr/ocr/Files/Traitement.h
+Utility.h
+/root/ocr/ocr/Files/Utility.h
+
+/root/ocr/ocr/Files/Utility.h
+stdlib.h
+-
+stdio.h
+-
+

@@ -19,27 +19,39 @@ void free_(BMPPic_ pic){
 
 int main()
 {
-    BMPPic_ pic = InitPic(pic,"Images/wiki_2.bmp");
+    printf("___ MAIN ___ \n");
 
-    BMPPic_ second = InitPic(second,"Images/wiki_2.bmp");
+    BMPPic_ pic = InitPic(pic,"../Images/wiki_2.bmp");
+    printf("1 > \n");
+
+    BMPPic_ second = InitPic(second,"../Images/wiki_2.bmp");
+    printf("2 > \n");
 
     pic = end(pic);
+    printf("end 1 > \n");
 
     second = end(second);
+    printf("end 2 > \n");
 
     pic = ApplyRLSA(pic,180,500);
+    printf("rlsa > \n");
 
     pic = Get_Space_Paragraph(pic,second);
+    printf("get space paragraph > \n");
 
     pic = moulinex(pic,second);
+    printf("moulinex > \n");
 
     pic = DetectZones(pic);
+    printf("detect zones > \n");
 
+    
     second = cathy(pic,second);
+    printf("cathy > \n");
 
-    restructPic(pic,"result/first.bmp");
+    restructPic(pic,"../result/first.bmp");
 
-    restructPic(second,"result/second.bmp");
+    restructPic(second,"../result/second.bmp");
 
     free_(pic);
 

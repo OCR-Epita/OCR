@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <errno.h>
+#include <string.h>
 #include "Utility.h"
 #include "Traitement.h"
 
@@ -92,6 +93,9 @@ void restructPic(BMPPic_ pic, char name[]){
 
 BMPPic_ InitPic(BMPPic_ pic,char *path){
     FILE *file = fopen(path,"a+");
+    if(file == NULL){
+        printf("%s \n", strerror(errno));
+    }
     char headerRead[128];
     fread(headerRead, 128, 1, file);
     pic = getHeader(headerRead,pic);
@@ -103,5 +107,6 @@ BMPPic_ InitPic(BMPPic_ pic,char *path){
     fread(pic.PIXELDATA,(size_t) pic.header.bfSize - pic.header.bfOffBits,1,file);
     pic = InitGreyMatr(pic);
     pic.nbZones = 0;
+    fclose(file);
     return pic;
 }

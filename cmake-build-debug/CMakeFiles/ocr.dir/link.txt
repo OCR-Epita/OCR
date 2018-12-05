@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/ocr.dir/Files/Binary.c.o CMakeFiles/ocr.dir/Files/Segmentation.c.o CMakeFiles/ocr.dir/Files/Traitement.c.o CMakeFiles/ocr.dir/Files/Utility.c.o CMakeFiles/ocr.dir/main.c.o  -o ocr -lm 

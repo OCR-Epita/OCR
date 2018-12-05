@@ -34,12 +34,13 @@ BMPPic_ DetectOutlines(BMPPic_ pic){
 }
 
 BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b){
+
     double seuil = seuil_a;
-    char data_x[pic.height][pic.width];
-    char data_y[pic.height][pic.width];
+    unsigned char data_x[pic.height][pic.width];
+    unsigned char data_y[pic.height][pic.width];
     for (size_t i = 0; i < pic.height; ++i) {
-        memset(data_x[i],255, sizeof(data_x[i]));
-        memset(data_y[i],255, sizeof(data_y[i]));
+        memset(data_x[i],255, pic.width);
+        memset(data_y[i],255, pic.width);
         int compt = 0;
         for (size_t j = 0; j < pic.width ; ++j) {
             if(getGray(pic,i,j) == 255)
@@ -85,6 +86,7 @@ BMPPic_ ApplyRLSA(BMPPic_ pic,int seuil_a,int seuil_b){
             pic = setGray(pic, (size_t) l, (size_t) i, (unsigned char) res);
         }
     }
+
     return pic;
 }
 
@@ -109,7 +111,6 @@ BMPPic_ DetectZones(BMPPic_ pic){
                 }
                 cur.width = tp_j - j;
                 pic.nbZones += 1;
-                printf("%d \n",pic.nbZones * sizeof(Zone));
                 pic.TEXTZONE = realloc(pic.TEXTZONE,pic.nbZones * sizeof(Zone));
                 pic.TEXTZONE[pic.nbZones-1] = cur;
                 for (size_t k = i; k < tp_i; k++) {
@@ -120,7 +121,7 @@ BMPPic_ DetectZones(BMPPic_ pic){
             }
         }
     }
-
+    printf(":      Il y a %d zones de texte. \n",pic.nbZones);
     for (size_t m = 0; m < pic.nbZones; ++m) {
         for (size_t i = pic.TEXTZONE[m].x; i < pic.TEXTZONE[m].x + pic.TEXTZONE[m].height; ++i) {
             for (size_t j = pic.TEXTZONE[m].y; j < pic.TEXTZONE[m].y + pic.TEXTZONE[m].width; ++j) {
@@ -128,6 +129,18 @@ BMPPic_ DetectZones(BMPPic_ pic){
             }
         }
     }
-    
+
+    return pic;
+}
+
+BMPPic_ detectChar(BMPPic_ pic){
+    for (size_t m = 0; m < pic.nbZones; ++m) {
+        for (size_t i = pic.TEXTZONE[m].x; i < pic.TEXTZONE[m].x + pic.TEXTZONE[m].height; ++i) {
+            for (size_t j = pic.TEXTZONE[m].y; j < pic.TEXTZONE[m].y + pic.TEXTZONE[m].width; ++j) {
+                pic.GREYMATRIX[i][j] = 80;
+            }
+        }
+    }
+
     return pic;
 }
