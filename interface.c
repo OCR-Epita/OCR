@@ -1,3 +1,7 @@
+//
+// Created by lucas on 05/12/18.
+//
+
 #include<gtk/gtk.h>
 
 char *filename = "";
