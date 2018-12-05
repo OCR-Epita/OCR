@@ -77,7 +77,7 @@ void Color_line (BMPPic_ MyPic,size_t line,int debut,int fin)
 BMPPic_ Get_group (BMPPic_ MyPic,const int* list)
 {
     int i = 1;
-    int* newlist = calloc(10,sizeof(int));
+    int* newlist = calloc(MyPic.width,sizeof(int));
     int res =0;
     int k = 0;
     while(list[i] != 0)
