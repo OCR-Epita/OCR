@@ -198,8 +198,9 @@ BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
 
     Color_colomn(MySecondPic,0);
     MyPic = Get_group(MyPic,MyPic.colons_scope);
+    MySecondPic.colons_scope = MyPic.colons_scope;
     int* list = MyPic.colons_scope;
-     int i = 0;
+    int i = 0;
     MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,0,list[i]);
     while( list[i] != 0)
     {
@@ -209,7 +210,6 @@ BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
 
     MyPic = coloriage(MyPic,MySecondPic);
 
-    freelife(MyPic);
     return MyPic;
 }
 

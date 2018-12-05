@@ -37,7 +37,7 @@ int main()
 
     pic = moulinex(pic,second);
 
-    restructPic(pic,"result/1.bmp");
+    restructPic(pic,"result/first.bmp");
     restructPic(second,"result/second.bmp");
 
     free_(pic);
