@@ -26,6 +26,6 @@ clean:
 mrproper: clean
 	rm -rf $(EXEC)
 
-commit:
+git:
 	git add --all
 	git commit -m "ok"
