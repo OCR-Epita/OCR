@@ -121,8 +121,6 @@ BMPPic_ DetectZones(BMPPic_ pic){
         }
     }
 
-    printf("nb de zones : %d \n",pic.nbZones);
-
     for (size_t m = 0; m < pic.nbZones; ++m) {
         for (size_t i = pic.TEXTZONE[m].x; i < pic.TEXTZONE[m].x + pic.TEXTZONE[m].height; ++i) {
             for (size_t j = pic.TEXTZONE[m].y; j < pic.TEXTZONE[m].y + pic.TEXTZONE[m].width; ++j) {
