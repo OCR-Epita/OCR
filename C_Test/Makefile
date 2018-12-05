@@ -1,21 +1,26 @@
-# Makefile
+CC=gcc
+CFLAGS= -g -Wall -Wextra
+LDFLAGS= -lm
+EXEC=ocr
+SRC= main.c test.c 
+OBJ= $(SRC:.c=.o)
 
-CC = gcc -fsanitize=address
-CPPFLAGS = -MMD
-CFLAGS = -Wall -Wextra -std=c99 -O0 -g
-LDFLAGS = -lm
-LDLIBS =
+all: $(EXEC)
 
-OBJ = test.o main.o
-DEP = ${OBJ:.o=.d}
+ocr: $(OBJ)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
-all: main
+main.o: $(SRC)
 
-main: ${OBJ}
+%.o: %.c
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+.PHONY: clean mrproper
 
 clean:
-	${RM} ${OBJ} ${DEP} main
+	rm -fr *.d
+	rm -rf *.o
 
--include ${DEP}
 
-# END
+mrproper: clean
+	rm -rf $(EXEC)

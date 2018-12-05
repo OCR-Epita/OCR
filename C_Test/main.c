@@ -25,15 +25,20 @@ int main()
     // }
 
 
-    printMatrix(test);
+    // test[0][0].liste[0] = 2556;
+
+    // saveMatrix(test,nombreNeuroneCouche1,nombreNeuroneCouche2);
+
+    printf("%f\n",test[0][0].liste[0]);
+
+    loadMatrix(test,nombreNeuroneCouche1,nombreNeuroneCouche2);
+
+    // printMatrix(test);
+
+    printf("%f\n",test[0][0].liste[0]);
 
 
     printf("\n");
-
-
-
-
-
 
 
     freeMatrix(test);

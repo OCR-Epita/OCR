@@ -265,13 +265,76 @@ char exitMatrix(NEURONE ** matrix)
         }
         i +=1;
     }
-    return tmp + 33;
+    return (char)(tmp + 33);
 }
 
-//void saveMatrix(NEURONE ** matrix)
-//{
-//
-//}
+void saveMatrix(NEURONE ** matrix, size_t nombreNeuroneCouche1, size_t nombreNeuroneCouche2)
+{
+    FILE * fichier;
+    fichier = fopen("save.txt","a");
+    if (fichier != NULL)
+    {
+        printf("rzvlznv\n");
+    }
+    size_t couche = nombreNeuroneCouche1;
+    size_t i = 0;
+    while(i <3)
+    {
+
+        if (i == 1)
+        {
+            couche = nombreNeuroneCouche2;
+        }
+        size_t j = 0;
+        while(matrix[i][j].valeur[0] != -500)
+        {
+            fwrite(matrix[i][j].liste,sizeof(float),couche,fichier);
+            // size_t k = 0;
+            // while(k < couche)
+            // {
+            //     fputc(matrix[i][j].liste[k],fichier);
+            //     k += 1;
+            // }
+            j += 1;
+        }
+        i += 1;
+    }
+    fclose(fichier);
+}
+
+void loadMatrix(NEURONE ** matrix, size_t nombreNeuroneCouche1, size_t nombreNeuroneCouche2)
+{
+    FILE * fichier;
+    fichier = fopen("save.txt","r");
+    if (fichier != NULL)
+    {
+        printf("rzvlznv\n");
+    }
+    size_t couche = nombreNeuroneCouche1;
+    size_t i = 0;
+    while(i<2)
+    {
+        if (i == 1)
+        {
+            couche = nombreNeuroneCouche2;
+        }
+        size_t j = 0;
+        while(matrix[i][j].valeur[0] != -500)
+        {
+            // float test[couche];
+            fread(matrix[i][j].liste, sizeof(float),couche,fichier);
+            // size_t k = 0;
+            // while(k<couche)
+            // {
+            //     matrix[i][j].liste[k] = test[k];
+            //     k+=1;
+            // }
+            j +=1;
+        }
+        i += 1;
+    }
+    fclose(fichier);
+}
 
 
 void initLetreInMatrix(unsigned char ** letres, NEURONE ** matrix, size_t hauteur, size_t largeur)
@@ -301,4 +364,26 @@ void learn(unsigned char *** letres, NEURONE ** matrix, size_t nbLetres, size_t 
 		}
 		j += 1;
 	}
+}
+
+void printLetreInTxt(NEURONE ** matrix)
+{
+    FILE* fichier;
+    fichier = fopen("res.txt","a");
+
+    fputc(exitMatrix(matrix),fichier);
+
+    fclose(fichier);
+}
+
+void printAllLetresInTxt(NEURONE ** matrix, unsigned char *** letres, size_t nbletres, size_t hauteur, size_t largeur)
+{
+    size_t i = 0;
+    while(i < nbletres)
+    {
+        initLetreInMatrix(letres[i],matrix,hauteur,largeur);
+        propagation(matrix);
+        printLetreInTxt(matrix);
+        i += 1;
+    }
 }
