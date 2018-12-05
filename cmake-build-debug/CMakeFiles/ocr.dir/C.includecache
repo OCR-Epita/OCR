@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/root/ocr/ocr/Files/Binary.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Binary.h
 Utility.h
-/root/ocr/ocr/Files/Utility.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Utility.h
 Traitement.h
-/root/ocr/ocr/Files/Traitement.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 
-/root/ocr/ocr/Files/Segmentation.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
 Traitement.h
-/root/ocr/ocr/Files/Traitement.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 
-/root/ocr/ocr/Files/Traitement.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 Utility.h
-/root/ocr/ocr/Files/Utility.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Utility.h
 
-/root/ocr/ocr/Files/Utility.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Utility.h
 stdlib.h
 -
 stdio.h
 -
 
-/root/ocr/ocr/main.c
+/home/lucas/Documents/afs/ocr/ocr/main.c
 stdio.h
 -
 stdlib.h
@@ -34,11 +34,11 @@ stdlib.h
 string.h
 -
 Files/Utility.h
-/root/ocr/ocr/Files/Utility.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Utility.h
 Files/Traitement.h
-/root/ocr/ocr/Files/Traitement.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 Files/Segmentation.h
-/root/ocr/ocr/Files/Segmentation.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
 Files/Binary.h
-/root/ocr/ocr/Files/Binary.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Binary.h
 

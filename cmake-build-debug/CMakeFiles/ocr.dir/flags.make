@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/root/ocr/ocr/Files 
+C_INCLUDES = -I/home/lucas/Documents/afs/ocr/ocr/Files 
 

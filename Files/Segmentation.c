@@ -28,7 +28,7 @@ BMPPic_ Get_Space_Paragraph (BMPPic_ MyPic,BMPPic_ MySecondPic)
     size_t i = 0;
     size_t j;
     float res;
-    int collons[MyPic.width];
+    int *collons = malloc(MyPic.width* sizeof(int));
     for (size_t l = 0; l < MyPic.width; ++l) {
         collons[l] = 0;
     }
@@ -49,7 +49,7 @@ BMPPic_ Get_Space_Paragraph (BMPPic_ MyPic,BMPPic_ MySecondPic)
         }
         if(res/MyPic.height < 0.1)
         {
-            collons[k] = i;
+            collons[k] = (int)i;
             Color_colomn(MySecondPic,i);
             k+=1;
         }
@@ -68,23 +68,21 @@ void Color_line (BMPPic_ MyPic,size_t line,int debut,int fin)
 
     while(i < fin)
     {
-        setGray(MyPic, line, i, 80);
+        setGray(MyPic, line, (size_t ) i, 80);
         i+=1;
     }
 
 }
 
-BMPPic_ Get_group (BMPPic_ MyPic,int* list)
+BMPPic_ Get_group (BMPPic_ MyPic,const int* list)
 {
     int i = 1;
-    int* newlist = calloc(0,10);
+    int* newlist = calloc(10,sizeof(int));
     int res =0;
     int k = 0;
     while(list[i] != 0)
     {
-
-
-        if((float)list[i-1]/list[i] > 0.98)
+        if((float)(list[i-1 ])/list[i] > 0.98)
         {
             res +=1;
         }
@@ -115,7 +113,7 @@ BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic, BMPPic_ MySecondPic,int debut,i
         res = 0;
         while(j< fin)
         {
-            if(getGray(MyPic,i,j) == 0)
+            if(getGray(MyPic,i,(size_t )j) == 0)
             {
                 res +=1;
             }
@@ -131,7 +129,7 @@ BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic, BMPPic_ MySecondPic,int debut,i
     return MyPic;
 }
 
-void freelife (BMPPic_ MyPic)
+/*void freelife (BMPPic_ MyPic)
 {
     free(MyPic.colons_scope);
 }
@@ -139,7 +137,7 @@ void freelife (BMPPic_ MyPic)
 BMPPic_ lignes_traitement (BMPPic_ MyPic, BMPPic_ MySecondPic, size_t x_upper,size_t y_upper, size_t x_bottom, size_t y_bottom)
 {
 
-    size_t i = x_upper;
+    size_t i;
     size_t j = y_upper;
 
     while(j < y_bottom)
@@ -154,7 +152,7 @@ BMPPic_ lignes_traitement (BMPPic_ MyPic, BMPPic_ MySecondPic, size_t x_upper,si
             }
             i+=1;
         }
-        if(res/(x_bottom-x_upper) < 0.06)
+        if((float)res/(x_bottom-x_upper) < 0.06)
         {
             for (size_t k = 0; k < y_bottom; ++k) {
                 for (size_t l = 0; l < x_bottom; ++l) {
@@ -166,7 +164,7 @@ BMPPic_ lignes_traitement (BMPPic_ MyPic, BMPPic_ MySecondPic, size_t x_upper,si
     }
     return MyPic;
 }
-
+*/
 BMPPic_ coloriage (BMPPic_ Mypic, BMPPic_ MySecondPic)
 {
     size_t i =0;
@@ -204,7 +202,7 @@ BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
     MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,0,list[i]);
     while( list[i] != 0)
     {
-        MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,list[i]+1,MyPic.width);
+        MyPic = Get_horizontal_Paragraph(MyPic,MySecondPic,list[i]+1,(int)MyPic.width);
         i+=1;
     }
 
@@ -213,7 +211,7 @@ BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
     return MyPic;
 }
 
-BMPPic_ separation (BMPPic_ MyPic,size_t x,size_t y,size_t size)
+/*BMPPic_ separation (BMPPic_ MyPic,size_t x,size_t y,size_t size)
 {
     size_t i = y;
 
@@ -226,7 +224,7 @@ BMPPic_ separation (BMPPic_ MyPic,size_t x,size_t y,size_t size)
         i+=1;
     }
     return MyPic;
-}
+}*/
 
 BMPPic_ cathy (BMPPic_ MyPic,BMPPic_ MySecondPic)
 {

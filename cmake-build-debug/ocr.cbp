@@ -8,106 +8,106 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/root/ocr/ocr/cmake-build-debug"/>
+				<Option working_dir="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/root/ocr/ocr/cmake-build-debug"/>
+				<Option working_dir="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/root/ocr/ocr/cmake-build-debug"/>
+				<Option working_dir="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ocr">
-				<Option output="/root/ocr/ocr/cmake-build-debug/ocr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/root/ocr/ocr/cmake-build-debug"/>
+				<Option output="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/ocr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/root/ocr/ocr/Files"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/home/lucas/Documents/afs/ocr/ocr/Files"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 ocr"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 ocr"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ocr/fast">
-				<Option output="/root/ocr/ocr/cmake-build-debug/ocr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/root/ocr/ocr/cmake-build-debug"/>
+				<Option output="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/ocr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/root/ocr/ocr/Files"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/home/lucas/Documents/afs/ocr/ocr/Files"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 ocr/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/root/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 ocr/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/root/ocr/ocr/Files/Binary.c">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Binary.c">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Binary.h">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Binary.h">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Segmentation.c">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.c">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Segmentation.h">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Traitement.c">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.c">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Traitement.h">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Utility.c">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Utility.c">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/Files/Utility.h">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/Files/Utility.h">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/main.c">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/main.c">
 			<Option target="ocr"/>
 		</Unit>
-		<Unit filename="/root/ocr/ocr/CMakeLists.txt">
+		<Unit filename="/home/lucas/Documents/afs/ocr/ocr/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
