@@ -23,5 +23,6 @@ CMakeFiles/ocr.dir/main.c.o: ../Files/Binary.h
 CMakeFiles/ocr.dir/main.c.o: ../Files/Segmentation.h
 CMakeFiles/ocr.dir/main.c.o: ../Files/Traitement.h
 CMakeFiles/ocr.dir/main.c.o: ../Files/Utility.h
+CMakeFiles/ocr.dir/main.c.o: ../interface/interface.h
 CMakeFiles/ocr.dir/main.c.o: ../main.c
 

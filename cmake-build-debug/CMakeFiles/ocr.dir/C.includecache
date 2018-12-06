@@ -12,18 +12,6 @@ Utility.h
 Traitement.h
 /home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 
-/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.c
-Segmentation.h
-/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
-Traitement.h
-/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
-string.h
--
-stdio.h
--
-stdlib.h
--
-
 /home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
 Traitement.h
 /home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
@@ -38,6 +26,16 @@ stdlib.h
 stdio.h
 -
 
+/home/lucas/Documents/afs/ocr/ocr/interface/interface.h
+../Files/Utility.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Utility.h
+../Files/Traitement.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
+../Files/Segmentation.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
+../Files/Binary.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Binary.h
+
 /home/lucas/Documents/afs/ocr/ocr/main.c
 stdio.h
 -
@@ -47,6 +45,8 @@ string.h
 -
 Files/Utility.h
 /home/lucas/Documents/afs/ocr/ocr/Files/Utility.h
+interface/interface.h
+/home/lucas/Documents/afs/ocr/ocr/interface/interface.h
 Files/Traitement.h
 /home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 Files/Segmentation.h

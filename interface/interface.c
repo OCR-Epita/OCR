@@ -80,7 +80,6 @@ inline static void Get_Dialog (GtkWidget *parent)
         GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog);
         gtk_file_chooser_set_action (chooser,action);
         filename = gtk_file_chooser_get_filename (chooser);
-        printf("%s \n",filename);
 
         GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file(filename, NULL);
 
@@ -117,7 +116,6 @@ inline static void Get_Folder (GtkWindow *parent)
         gtk_file_chooser_set_action (choice,action);
         saved_file = gtk_file_chooser_get_filename(choice);
 
-        printf("%s \n",saved_file);
 
     }
     gtk_widget_destroy (dialog);

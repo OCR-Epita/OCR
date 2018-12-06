@@ -224,7 +224,7 @@ BMPPic_ moulinex (BMPPic_ MyPic,BMPPic_ MySecondPic)
         i+=1;
     }
     return MyPic;
-}*/
+}
 
 BMPPic_ cathy (BMPPic_ MyPic,BMPPic_ MySecondPic)
 {
@@ -256,6 +256,7 @@ BMPPic_ cathy (BMPPic_ MyPic,BMPPic_ MySecondPic)
     }
     return MySecondPic;
 }
+ */
 
 
 
