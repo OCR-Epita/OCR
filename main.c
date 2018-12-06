@@ -21,9 +21,9 @@ void free_(BMPPic_ pic){
 
 int main()
 {
-    BMPPic_ pic = InitPic(pic,"Images/wiki2.bmp");
+    BMPPic_ pic = InitPic(pic,"../Images/wiki2.bmp");
     
-    BMPPic_ second = InitPic(second,"Images/wiki2.bmp");
+    BMPPic_ second = InitPic(second,"../Images/wiki2.bmp");
 
     pic = end(pic);
 
@@ -43,13 +43,22 @@ int main()
 
     second = DivideZone(second);
 
-    restructPic(pic,"result/first.bmp");
+    second.nbZones = 0;
 
-    restructPic(second,"result/second.bmp");
+    second = DetectChars(second);
+
+
+    /*second = DetectWords(second);*/
+
+    restructPic(pic,"../result/first.bmp");
+
+    restructPic(second,"../result/second.bmp");
 
     free_(pic);
-
     free_(second);
+    free(second.TEXTZONE);
+    free(second.CHARS);
+    /*free(second.SPACE);*/
 
 	return 0;
 }

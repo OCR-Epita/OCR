@@ -41,6 +41,13 @@ typedef struct {
 } Zone;
 
 typedef struct {
+    size_t x;
+    size_t y;
+    size_t height;
+    size_t width;
+} Char;
+
+typedef struct {
     BITMAPHEADER header;
     size_t height;
     size_t width;
@@ -49,10 +56,12 @@ typedef struct {
     unsigned char **GREYMATRIX;
     size_t nbZones;
     Zone *TEXTZONE;
+    size_t  nbChars;
+    Char *CHARS;
+    unsigned char *SPACE;
     int* colons_scope;
     int last;
 } BMPPic_;
-
 
 BMPPic_ getHeader(char data[],BMPPic_ pic);
 

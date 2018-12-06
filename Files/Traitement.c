@@ -159,18 +159,47 @@ BMPPic_ DivideZone(BMPPic_ pic){
 
     }
 
-    // unsigned char alrdTreat[pic.height][pic.width];
-    // memset(alrdTreat,0,pic.height * pic.width);
-    //
-    // for (size_t i = 0; i < pic.height; i++) {
-    //     for (size_t j = 0; j < pic.width; j++) {
-    //         size_t tp_i = i;
-    //         size_t tp_j = j;
-    //         while (pic.GREYMATRIX[i][tp_j] == 80) {
-    //             /* code */
-    //         }
-    //     }
-    // }
-
     return pic;
 }
+
+BMPPic_ DetectChars(BMPPic_ pic){
+    unsigned char alrdTrt[pic.height][pic.width];
+    memset(alrdTrt,0,pic.height * pic.width);
+    for (size_t i = 0; i < pic.height; ++i) {
+        for (size_t j = 0; j < pic.width; ++j) {
+            if(alrdTrt[i][j] == 0 && pic.GREYMATRIX[i][j] != 80){
+                size_t tp_i = i;
+                size_t tp_j = j;
+                while(pic.GREYMATRIX[tp_i][j] != 80) {
+                    ++tp_i;
+                }
+                while(pic.GREYMATRIX[i][tp_j] != 80) {
+                    ++tp_j;
+                }
+                Char cur;
+                cur.x = i;
+                cur.y = j;
+                cur.height = tp_i - i;
+                cur.width = tp_j - j;
+                pic.nbChars += 1;
+                pic.CHARS = realloc(pic.CHARS,pic.nbChars * sizeof(Char));
+                pic.CHARS[pic.nbChars - 1] = cur;
+                for (size_t k = 0; k < tp_i - i; ++k) {
+                    for (size_t l = 0; l < tp_j - j; ++l) {
+                        alrdTrt[i + k][j + l] = 1;
+                    }
+                }
+                pic.GREYMATRIX[cur.x][cur.y] = 70;
+            }
+            if(pic.GREYMATRIX[i][j] == 80)
+                pic.GREYMATRIX[i][j] = 255;
+        }
+    }
+    return pic;
+}
+
+/*
+BMPPic_ DetectWords(BMPPic_ pic){
+    pic.SPACE = malloc(1024);
+    return pic;
+}*/

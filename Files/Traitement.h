@@ -13,4 +13,8 @@ BMPPic_ DetectZones(BMPPic_ pic);
 
 BMPPic_ DivideZone(BMPPic_ pic);
 
+BMPPic_ DetectChars(BMPPic_ pic);
+
+/*BMPPic_ DetectWords(BMPPic_ pic);*/
+
 #endif

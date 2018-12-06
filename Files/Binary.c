@@ -157,25 +157,6 @@ double Get_newMean (histogram histo,int debut ,int threshold)
 
 
 
-/*double Get_newVariance (histogram histo,int debut,int threshold)
-{
-
-    int i = debut;
-    double res = 0;
-    int div =0;
-    double a = Get_newMean(histo,debut,threshold);
-
-    while(i < threshold)
-    {
-
-        double val = (i - a )*(i-a)*histo.scope.greyscales[i];
-        div += histo.scope.greyscales[i];
-        res+=val;
-        i+=1;
-    }
-    res /= div;
-    return res;
-}*/
 
 //Use to get the threshold
 int Bimodal_threshold (histogram histo)
@@ -265,6 +246,8 @@ BMPPic_ end (BMPPic_ pic)
         }
         i+=1;
     }
+    //free(histo.nbr);
+    //free(histo.scope.greyscales);
     return pic;
 }
 
