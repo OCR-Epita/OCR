@@ -12,6 +12,18 @@ Utility.h
 Traitement.h
 /home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
 
+/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.c
+Segmentation.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
+Traitement.h
+/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+
 /home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.h
 Traitement.h
 /home/lucas/Documents/afs/ocr/ocr/Files/Traitement.h

@@ -3,17 +3,30 @@
 //
 
 #include<gtk/gtk.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-char *filename = "";
+
+#include "interface.h"
+
+
+gchar *filename = "";
 gchar *saved_file = "";
 char *blank = "blank.png";
-GtkWidget *window;
-GtkWidget *pop;
-GtkWidget *image;
+GtkWidget *Mywindow;
 GtkWidget *vbox;
-GtkWidget *entry;
+GtkWidget *image;
 GtkWidget *frame;
 
+void free_(BMPPic_ pic){
+    free(pic.PIXELDATA);
+    free(pic.HEADERDATA);
+    for (size_t i = 0; i < pic.height; i++) {
+        free(pic.GREYMATRIX[i]);
+    }
+    free(pic.GREYMATRIX);
+}
 
 gboolean draw_picture(GtkWidget *da, cairo_t *cr, gpointer data)
 {
@@ -29,7 +42,7 @@ gboolean draw_picture(GtkWidget *da, cairo_t *cr, gpointer data)
     return FALSE;
 }
 
-static void clear (GtkWidget *da, cairo_t *cr, gpointer data)
+inline static void clear (GtkWidget *da, cairo_t *cr, gpointer data)
 {
     gint width = gtk_widget_get_allocated_width(frame);
     gint height = gtk_widget_get_allocated_height(frame);
@@ -39,13 +52,13 @@ static void clear (GtkWidget *da, cairo_t *cr, gpointer data)
 
 }
 
-static void fclean (GtkWidget *da, cairo_t *cr, gpointer data)
+inline static void fclean (GtkWidget *da, cairo_t *cr, gpointer data)
 {
     GdkPixbuf *temp = gdk_pixbuf_new_from_file_at_size(blank, 100,100, NULL);
     g_signal_connect(frame, "draw", G_CALLBACK(clear), NULL);
 }
 
-static void Get_Dialog (GtkWidget *parent)
+inline static void Get_Dialog (GtkWidget *parent)
 {
     GtkWidget *dialog;
     GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
@@ -65,7 +78,9 @@ static void Get_Dialog (GtkWidget *parent)
     {
 
         GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog);
+        gtk_file_chooser_set_action (chooser,action);
         filename = gtk_file_chooser_get_filename (chooser);
+        printf("%s \n",filename);
 
         GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file(filename, NULL);
 
@@ -74,14 +89,12 @@ static void Get_Dialog (GtkWidget *parent)
         g_signal_connect(frame, "draw", G_CALLBACK(draw_picture), pixbuf);
         gtk_widget_set_size_request (frame, 600, 600);
 
-        opendir (filename);
-        g_free (filename);
 
     }
     gtk_widget_destroy (dialog);
 }
 
-static void Get_Folder (GtkWindow *parent)
+inline static void Get_Folder (GtkWindow *parent)
 {
 
     GtkWidget *dialog;
@@ -103,6 +116,7 @@ static void Get_Folder (GtkWindow *parent)
         GtkFileChooser *choice = GTK_FILE_CHOOSER(dialog);
         gtk_file_chooser_set_action (choice,action);
         saved_file = gtk_file_chooser_get_filename(choice);
+
         printf("%s \n",saved_file);
 
     }
@@ -110,12 +124,34 @@ static void Get_Folder (GtkWindow *parent)
 }
 
 
-static void Ocr (GtkWindow *parent)
+static void Ocr ()
 {
 
+    BMPPic_ pic = InitPic(pic,filename);
+    BMPPic_ second = InitPic(second,filename);
+
+    pic = end(pic);
+    second = end(second);
+
+    pic = ApplyRLSA(pic,180,500);
+
+    pic = Get_Space_Paragraph(pic,second);
+
+    pic = moulinex(pic,second);
+
+    pic = DetectZones(pic);
+
+    //second = cathy(pic,second);
+
+    restructPic(pic,"result/first.bmp");
+    restructPic(second,"result/second.bmp");
+
+
+    free_(pic);
+    free_(second);
 }
 
-int main(int argc, char *argv[])
+int Mymain(int argc, char *argv[])
 {
 
     gtk_init(&argc, &argv);
@@ -142,15 +178,15 @@ int main(int argc, char *argv[])
     GtkWidget *okBtn;
 
 
-    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
-    gtk_widget_set_size_request(window, 500, 500);
-    gtk_container_set_border_width (GTK_CONTAINER (window), 5);
-    gtk_window_set_resizable(GTK_WINDOW(window),FALSE);
-    gtk_window_set_title(GTK_WINDOW(window), "OCR");
+    Mywindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_position(GTK_WINDOW(Mywindow), GTK_WIN_POS_CENTER);
+    //gtk_widget_set_size_request(window, 500, 500);
+    gtk_container_set_border_width (GTK_CONTAINER (Mywindow), 5);
+    gtk_window_set_resizable(GTK_WINDOW(Mywindow),FALSE);
+    gtk_window_set_title(GTK_WINDOW(Mywindow), "OCR");
 
     vbox = gtk_vbox_new(FALSE, 1);
-    gtk_container_add(GTK_CONTAINER(window), vbox);
+    gtk_container_add(GTK_CONTAINER(Mywindow), vbox);
 
     toolbar = gtk_toolbar_new();
     gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_ICONS);
@@ -188,7 +224,7 @@ int main(int argc, char *argv[])
     g_signal_connect(G_OBJECT(openTb), "clicked", G_CALLBACK(Get_Dialog), frame);
     g_signal_connect(G_OBJECT(saveTb), "clicked", G_CALLBACK(Get_Folder), NULL);
 
-    g_signal_connect(G_OBJECT(window), "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    g_signal_connect(G_OBJECT(Mywindow), "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
 
 
@@ -208,10 +244,10 @@ int main(int argc, char *argv[])
     gtk_container_add(GTK_CONTAINER(halign), box_2);
 
     gtk_box_pack_start(GTK_BOX(box_1), halign, FALSE, FALSE, 0);
-    g_signal_connect(G_OBJECT(window), "clicked", G_CALLBACK(Ocr), NULL);
+    g_signal_connect(G_OBJECT(okBtn), "clicked", G_CALLBACK(Ocr), NULL);
 
 
-    gtk_widget_show_all(window);
+    gtk_widget_show_all(Mywindow);
     gtk_main();
 
     return 0;

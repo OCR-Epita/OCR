@@ -119,7 +119,7 @@ BMPPic_ Get_horizontal_Paragraph (BMPPic_ MyPic, BMPPic_ MySecondPic,int debut,i
             }
             j+=1;
         }
-        if(res/MyPic.width < 0.06)
+        if(res/MyPic.width < 0.04)
         {
             Color_line(MySecondPic,i,debut,fin);
             k+=1;
