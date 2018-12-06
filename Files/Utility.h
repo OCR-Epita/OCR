@@ -41,6 +41,12 @@ typedef struct {
 } Zone;
 
 typedef struct {
+    unsigned char **matrix;
+    size_t height;
+    size_t width;
+}character;
+
+typedef struct {
     BITMAPHEADER header;
     size_t height;
     size_t width;
@@ -49,6 +55,7 @@ typedef struct {
     unsigned char **GREYMATRIX;
     size_t nbZones;
     Zone *TEXTZONE;
+    character *character_list;
     int* colons_scope;
     int last;
 } BMPPic_;

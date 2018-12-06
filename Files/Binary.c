@@ -242,8 +242,8 @@ BMPPic_ end (BMPPic_ pic)
     histo = Get_window(histo);
     histo = Calculus(histo);
     histo = Is_Bimodal(histo);
-    histo.scope.x = i;
-    histo.scope.y = j;
+    histo.scope.x = (int)i;
+    histo.scope.y = (int)j;
     histo.scope.size = 5;
     histo.Bimodal = 1;
     int threshold = Bimodal_threshold(histo);

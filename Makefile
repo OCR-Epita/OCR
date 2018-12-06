@@ -4,7 +4,7 @@ PKGCONFIG = $(shell which pkg-config)
 LDFLAGS= -lm
 LIBS = `pkg-config --cflags --libs gtk+-3.0`
 EXEC= ocr
-SRC= Files/Utility.c Files/Traitement.c Files/Binary.c main.c Files/Segmentation.c interface/interface.c
+SRC= Files/Utility.c Files/Traitement.c Files/Binary.c main.c Files/Segmentation.c interface/interface.c Files/adjustement.c
 OBJ= $(SRC:.c=.o)
 
 all: $(EXEC)

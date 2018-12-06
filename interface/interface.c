@@ -121,6 +121,14 @@ inline static void Get_Folder (GtkWindow *parent)
     gtk_widget_destroy (dialog);
 }
 
+gchar *fusion (gchar *s1,gchar *s2)
+{
+    gchar *result;
+    strcpy(result, s1);
+    strcat(result, s2);
+    printf(result);
+    return result;
+}
 
 static void Ocr ()
 {
