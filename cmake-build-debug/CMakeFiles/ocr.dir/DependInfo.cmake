@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/lucas/Documents/afs/ocr/ocr/Files/Binary.c" "/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Binary.c.o"
-  "/home/lucas/Documents/afs/ocr/ocr/Files/Segmentation.c" "/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Segmentation.c.o"
-  "/home/lucas/Documents/afs/ocr/ocr/Files/Traitement.c" "/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Traitement.c.o"
-  "/home/lucas/Documents/afs/ocr/ocr/Files/Utility.c" "/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Utility.c.o"
-  "/home/lucas/Documents/afs/ocr/ocr/main.c" "/home/lucas/Documents/afs/ocr/ocr/cmake-build-debug/CMakeFiles/ocr.dir/main.c.o"
+  "/root/ocr/Files/Binary.c" "/root/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Binary.c.o"
+  "/root/ocr/Files/Segmentation.c" "/root/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Segmentation.c.o"
+  "/root/ocr/Files/Traitement.c" "/root/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Traitement.c.o"
+  "/root/ocr/Files/Utility.c" "/root/ocr/cmake-build-debug/CMakeFiles/ocr.dir/Files/Utility.c.o"
+  "/root/ocr/main.c" "/root/ocr/cmake-build-debug/CMakeFiles/ocr.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

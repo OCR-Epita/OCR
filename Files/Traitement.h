@@ -11,4 +11,6 @@ void PrintZone(Zone zone);
 
 BMPPic_ DetectZones(BMPPic_ pic);
 
+BMPPic_ DivideZone(BMPPic_ pic);
+
 #endif

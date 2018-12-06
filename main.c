@@ -21,27 +21,34 @@ void free_(BMPPic_ pic){
 
 int main()
 {
-    BMPPic_ pic = InitPic(pic,"../Images/wiki2.bmp");
-    BMPPic_ second = InitPic(second,"../Images/wiki2.bmp");
-
+    BMPPic_ pic = InitPic(pic,"Images/wiki2.bmp");
+    
+    BMPPic_ second = InitPic(second,"Images/wiki2.bmp");
 
     pic = end(pic);
+
     second = end(second);
 
-    pic = ApplyRLSA(pic,180,500);
+    pic = ApplyRLSA(pic,1000,3);
+
     pic = Get_Space_Paragraph(pic,second);
 
     pic = moulinex(pic,second);
 
     pic = DetectZones(pic);
 
-    second = cathy(pic,second);
+    second.TEXTZONE = pic.TEXTZONE;
 
-    restructPic(pic,"../result/first.bmp");
-    restructPic(second,"../result/second.bmp");
+    second.nbZones = pic.nbZones;
 
+    second = DivideZone(second);
+
+    restructPic(pic,"result/first.bmp");
+
+    restructPic(second,"result/second.bmp");
 
     free_(pic);
+
     free_(second);
 
 	return 0;
